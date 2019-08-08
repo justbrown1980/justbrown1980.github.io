@@ -116,6 +116,7 @@ img {
 
 .btn__secondary {
     background-color: var(--clr-highlight);
+    display: block;
     color: var(--clr-dark-text);
     border: 1px solid var(--clr-highlight);
 }
