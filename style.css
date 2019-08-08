@@ -55,6 +55,7 @@ body {
     font-weight: 400;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 @media (min-width: 400px) {
@@ -98,6 +99,8 @@ img {
 }
 
 .btn__outline {
+    background-color: var(--clr-highlight);
+    color: var(--clr-light-text);
     border: 0.1rem solid rgba(255, 255, 255, 1); 
 }
 
@@ -117,7 +120,7 @@ img {
 .btn__secondary {
     background-color: var(--clr-highlight);
     display: block;
-    color: var(--clr-dark-text);
+    color: var(--clr-light-text);
     border: 1px solid var(--clr-highlight);
 }
 
