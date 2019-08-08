@@ -74,7 +74,7 @@ img {
 }
 
 .wrapper {
-    max-width: calc(var(--media-large) - 10rem);
+    max-width: var(--media-large);
     margin: 0 auto;
 }
 
