@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+
+@font-face {
+    font-family: 'beyond_the_mountainsregular';
+    src: url('fonts/beyond_the_mountains-webfont.woff2') format('woff2'),
+         url('fonts/beyond_the_mountains-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --clr-highlight: rgba(239, 0, 49, 1);
+    --clr-dark-bg: rgba(0, 0, 0, 1);
+    --clr-light-text: rgba(255, 255, 255, 1);
+    --clr-dark-text: rgba(0, 0, 0, 1);
+
+    --font-size--small: 60%;
+    --font-size: 100%; /* 16px */
+    --ratio: 1.333;
+    
+    --p:  var(--font-size);
+    --h4: calc(var(--font-size)*var(--ratio));
+    --h3: calc(var(--h4)*var(--ratio));
+    --h2: calc(var(--h3)*var(--ratio));
+    --h1: calc(var(--h2)*var(--ratio)*2);
+
+    --media-small: 50vw;
+    --media-large: 100vw;
+
+    --font-family: "Open Sans", Arial, Helvetica, sans-serif;
+
+}
+h1 {
+    font-family: 'beyond_the_mountainsregular', sans-serif;
+    font-size: var(--h1);
+    text-align: center;
+    margin: 0;
+}
+h2 {
+    font-family: 'beyond_the_mountainsregular', sans-serif;
+    font-size: var(--h2);
+    text-align: center;
+}
+h3 {font-size: var(--h3);}
+h4 {font-size: var(--h4);}
+
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size--small);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 400px) {
+    body{font-size: var(--font-size);}
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.wrapper {
+    max-width: calc(var(--media-large) - 10rem);
+    margin: 0 auto;
+}
+
+/* Utility Clases */
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 1.5rem; 
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn__outline {
+    border: 0.1rem solid rgba(255, 255, 255, 1); 
+}
+
+.btn__primary {
+    background-color: var(--clr-highlight);
+    color: var(--clr-light-text);
+    transition: all 0.25s ease-in-out;
+}
+
+.btn__primary:hover {
+    background-color: var(--clr-highlight);
+    color: var(--clr-dark-text);
+    transition: all 0.25s ease-in-out;
+}
+
+
+.btn__secondary {
+    background-color: var(--clr-highlight);
+    color: var(--clr-dark-text);
+    border: 1px solid var(--clr-highlight);
+}
+
+
+
+
+
+/* Header */
+header[role="banner"] {
+    background-color: var(--clr-highlight);
+    color: var(--clr-light-text);
+
+    padding: 2vh 0;
+}
+
+[role="banner"] > .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+
+    max-width: calc(var(--media-large) - 20rem);
+}
+
+/* Navigation */
+
+nav ul {
+    display: block;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    text-align: center;
+    margin: 0 15px;
+}
+
+nav a {
+    font-family: var(--font-family);
+    color: var(--clr-light-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: rgba(var(--clr-light-text), 0.5);
+    text-decoration: none;
+
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 1);
+
+    padding-bottom: 0.5rem;
+}
+
+/* Banner Area */
+[role="complementary"] {
+    background: #000 url(../images/pizza-bg-opt.jpg) no-repeat;
+    background-size: cover;
+
+    color: var(--clr-light-text);
+
+    padding: 20vh 0;
+}
+
+/* Byline above main head */
+.byline {
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--clr-light-text);
+
+    margin: 0;
+}
+
+
+
+/* Specials */
+
+.specials > .wrapper {
+    max-width: calc(var(--media-large) - 10rem);
+} 
+
+@media (min-width: 400px) {
+    .specials__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-gap: 2rem 1rem;
+    }
+}
+
+.specials__grid > div {
+    text-align: center;
+}
+
+.specials img {
+    margin: 0 auto;
+}
+
+.specials .price {
+    font-size: var(--h4);
+    text-align: center;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.specials__title {
+    text-align: center;
+}
+
+
+/* Menu Tabs */
+
+.tabbed {
+	overflow-x: hidden; /* so we could easily hide the radio inputs */
+	margin: 32px 0;
+	padding-bottom: 16px;
+}
+
+.tabbed [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tabs {
+	display: flex;
+    justify-content: center;
+	list-style: none;
+    padding: 0;
+    border-bottom: 0.25rem solid var(--clr-highlight);
+}
+.tab > label {
+    display: block;
+    margin: 0 1.5vw -1px 1.5vw;
+	padding: 1.2vw 1.5vw;
+	color: #666;
+	font-size: var(--font-size); 
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;	
+    transition: all 0.3s;
+    
+}
+.tab:hover label {
+	color: #333;
+}
+
+.tab-content {
+	display: none;
+	color: #777;
+}
+
+/* As we cannot replace the numbers with variables or calls to element properties, the number of this selector parts is our tab count limit */
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label,
+.tabbed [type="radio"]:nth-of-type(6):checked ~ .tabs .tab:nth-of-type(6) label,
+.tabbed [type="radio"]:nth-of-type(7):checked ~ .tabs .tab:nth-of-type(7) label {
+    color:#fff;
+	background: var(--clr-highlight);
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5),
+.tabbed [type="radio"]:nth-of-type(6):checked ~ .tab-content:nth-of-type(6),
+.tabbed [type="radio"]:nth-of-type(7):checked ~ .tab-content:nth-of-type(7) {
+	display: block;
+}
+
